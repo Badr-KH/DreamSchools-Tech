@@ -13,6 +13,12 @@ class App extends React.Component {
           <Route path="/create" exact component={Create} />
           <Route path="/listing/:id" exact component={SingleListing} />
           <Route path="/update/:id" exact component={Update} />
+          <Route
+            path="*"
+            render={() => (
+              <h1>Sorry, the page you are looking for doesn't exist</h1>
+            )}
+          />
         </Switch>
       </BrowserRouter>
     );

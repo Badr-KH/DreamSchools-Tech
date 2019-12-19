@@ -4,8 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "concurrently \"nodemon server/www/index.js\" \"npm start --prefix client\""
+    "dev": "concurrently \"nodemon server/www/index.js\" \"npm start --prefix client\"",
+    "start": "node server/www/index.js",
+    "heroku-postbuild": "cd client && npm install && npm run build"
   },
   "keywords": [],
   "author": "",

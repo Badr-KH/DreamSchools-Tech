@@ -9,9 +9,10 @@ mongoose
   .connect(process.env.connectionString, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
-    useCreateIndex: true
+    useCreateIndex: true,
+    useFindAndModify: false
   })
   .then(() => {
     console.log("Connected to the database");
-    server.listen(PORT, console.log("Listening on port 3001"));
+    server.listen(PORT, console.log(`Listening on port ${PORT}`));
   });

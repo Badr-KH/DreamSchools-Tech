@@ -4,7 +4,7 @@ class Header extends Component {
   render() {
     return (
       <div>
-        <h1>Welcome to the School Directory</h1>
+        <h1>Welcome to the our directory of schools !</h1>
         <Button
           variant="outlined"
           color="primary"
