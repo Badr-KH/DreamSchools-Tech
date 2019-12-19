@@ -19,7 +19,10 @@ class SingleListing extends Component {
     if (param)
       fetch(`/school/${param}`)
         .then(res => res.json())
-        .then(res => this.setState({ listing: res }));
+        .then(res => {
+          if (res.error) return this.props.history.push("/");
+          this.setState({ listing: res });
+        });
   }
   render() {
     const { classes } = this.props;

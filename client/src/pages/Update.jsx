@@ -26,7 +26,8 @@ class Update extends Component {
     if (param)
       fetch(`/school/${param}`)
         .then(res => res.json())
-        .then(res =>
+        .then(res => {
+          if (res.error) return this.props.history.push("/");
           this.setState({
             name: res.name,
             location: res.location,
@@ -34,8 +35,8 @@ class Update extends Component {
             about: res.about,
             photo: res.imageLink,
             id: res._id
-          })
-        );
+          });
+        });
   }
   onImageChange(file) {
     if (file) {
